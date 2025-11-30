@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cheesiee Delight!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar flex between">
+            <a href="index.html" class="logo"><img src="images/Cheesiee Delight! logo.png"></a>
+            <!-- Desktop Menu -->
+            <ul class="navlist flex gap-3">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="menu.html" class="active">MENU</a></li>
+                <li><a href="reviews.html">REVIEWS</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+            <div class="desktop-action flex gap-2">
+                <a href="#" class="cart-icon">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-value">0</span>
+                </a>
+                <a href="#" class="btn">
+                    <i class="fa-regular fa-user"></i> Sign In
+                </a>
+                <a href="#" class="lines">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+            <!-- Mobile Menu -->
+            <ul class="mobile-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="menu.html" class="active">MENU</a></li>
+                <li><a href="reviews.html">REVIEWS</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a href="#" class="btn">
+                        <i class="fa-regular fa-user"></i> Sign In
+                    </a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- CART -->
+    <div class="cart-tab">
+        <h2 class="your">Your Cart</h2>
+        <div class="cart-list"></div>
+        <div class="total-container">
+            <h3>Total:</h3>
+            <h4 class="cart-total">Rs. 0</h4>
+        </div>
+        <div class="btn-cart-container">
+            <button class="btn close-btn">Close</button>
+            <button class="btn check-btn">Checkout</button>
+        </div>
+    </div>
+    <section class="menu-section">
+        <h1 class="menu-title">Our <span>Menu!</span></h1>
+
+        <div class="menu-grid">
+            <div class="menu-card" data-id="1" data-name="Beef Burger" data-price="450"
+                data-img="images/Classic Beef Burger.jpg">
+                <img src="images/Classic Beef Burger.jpg" alt="">
+                <h2>Beef Burger</h2>
+                <p class="price">Rs. 450</p>
+                <button class="btn add-btn">Add to Cart</button>
+            </div>
+            <div class="menu-card" data-id="2" data-name="Fajita Pizza" data-price="850"
+                data-img="images/Fajita Pizza.jpg">
+                <img src="images/Fajita Pizza.jpg" alt="">
+                <h2>Fajita Pizza</h2>
+                <p class="price">Rs. 850</p>
+                <button class="btn add-btn">Add to Cart</button>
+            </div>
+            <div class="menu-card" data-id="3" data-name="Crispy Fries" data-price="250"
+                data-img="images/Crispy Fries.jpg">
+                <img src="images/Crispy Fries.jpg" alt="">
+                <h2>Crispy Fries</h2>
+                <p class="price">Rs. 250</p>
+                <button class="btn add-btn">Add to Cart</button>
+            </div>
+            <div class="menu-card" data-id="4" data-name="Chicken Wrap" data-price="300"
+                data-img="images/Chicken Wrap.jpg">
+                <img src="images/Chicken Wrap.jpg" alt="">
+                <h2>Chicken Wrap</h2>
+                <p class="price">Rs. 300</p>
+                <button class="btn add-btn">Add to Cart</button>
+            </div>
+            <div class="menu-card" data-id="5" data-name="Grill Sandwich" data-price="350"
+                data-img="images/Grill Sandwich.jpg">
+                <img src="images/Grill Sandwich.jpg" alt="">
+                <h2>Grill Sandwich</h2>
+                <p class="price">Rs. 350</p>
+                <button class="btn add-btn">Add to Cart</button>
+            </div>
+            <div class="menu-card" data-id="6" data-name="Hot Wings" data-price="400" data-img="images/Hot Wings.jpg">
+                <img src="images/Hot Wings.jpg" alt="">
+                <h2>Hot Wings</h2>
+                <p class="price">Rs. 400</p>
+                <button class="btn add-btn">Add to Cart</button>
+            </div>
+            <div class="menu-card" data-id="7" data-name="Chicken Nuggets" data-price="350"
+                data-img="images/Chicken Nuggets.jpg">
+                <img src="images/Chicken Nuggets.jpg" alt="">
+                <h2>Chicken Nuggets</h2>
+                <p class="price">Rs. 350</p>
+                <button class="btn add-btn">Add to Cart</button>
+            </div>
+            <div class="menu-card" data-id="8" data-name="Garlic Bread" data-price="250"
+                data-img="images/Garlic Bread.jpg">
+                <img src="images/Garlic Bread.jpg" alt="">
+                <h2>Garlic Bread</h2>
+                <p class="price">Rs. 250</p>
+                <button class="btn add-btn">Add to Cart</button>
+            </div>
+            <div class="menu-card" data-id="9" data-name="Malai Boti Pizza" data-price="850"
+                data-img="images/Malai Boti Pizza.jpg">
+                <img src="images/Malai Boti Pizza.jpg" alt="">
+                <h2>Malai Boti Pizza</h2>
+                <p class="price">Rs. 850</p>
+                <button class="btn add-btn">Add to Cart</button>
+            </div>
+            <div class="menu-card" data-id="10" data-name="Zinger Burger" data-price="450"
+                data-img="images/Zinger Burger.png">
+                <img src="images/Zinger Burger.png" alt="">
+                <h2>Zinger Burger</h2>
+                <p class="price">Rs. 450</p>
+                <button class="btn add-btn">Add to Cart</button>
+            </div>
+            <div class="menu-card" data-id="11" data-name="Regular Drink" data-price="150"
+                data-img="images/Regular Drink.jpg">
+                <img src="images/Regular Drink.jpg" alt="">
+                <h2>Regular Drink</h2>
+                <p class="price">Rs. 150</p>
+                <button class="btn add-btn">Add to Cart</button>
+            </div>
+        </div>
+        <h1 class="menu-title-2">Our <span>Deals!</span></h1>
+        <div class="menu-grid">
+            <div class="menu-card" data-id="12" data-name="Deal 1" data-price="1400" data-img="images/Deal 1.jpg">
+                <img src="images/Deal 1.jpg" alt="">
+                <h2>2 Fajita Pizzas</h2>
+                <p class="price">Rs. 1400</p>
+                <button class="btn add-btn">Add to Cart</button>
+            </div>
+            <div class="menu-card" data-id="13" data-name="Deal 2" data-price="550" data-img="images/Deal 2.jpg">
+                <img src="images/Deal 2.jpg" alt="">
+                <h2>Fries & Sandwich</h2>
+                <p class="price">Rs. 550</p>
+                <button class="btn add-btn">Add to Cart</button>
+            </div>
+            <div class="menu-card" data-id="14" data-name="Deal 3" data-price="1050" data-img="images/Deal 3.jpg">
+                <img src="images/Deal 3.jpg" alt="">
+                <h2>3 Patty Burgers</h2>
+                <p class="price">Rs. 1050</p>
+                <button class="btn add-btn">Add to Cart</button>
+            </div>
+            <div class="menu-card" data-id="15" data-name="Deal 4" data-price="650" data-img="images/Deal 4.jpg">
+                <img src="images/Deal 4.jpg" alt="">
+                <h2>Fries & Wings</h2>
+                <p class="price">Rs. 650</p>
+                <button class="btn add-btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-brand"> <img src="images/Cheesiee Delight! logo.png" alt="Cheesiee Delight logo"
+                    class="footer-logo">
+                <p>Delicious Fast Food — Handcrafted Daily.</p>
+            </div>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <div class="footer-column">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#burgers">Burgers</a></li>
+                        <li><a href="#fries">Fries</a></li>
+                        <li><a href="#deals">Deals</a></li>
+                        <li><a href="#combo">Combos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#details">Details</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#faqs">FAQs</a></li>
+                        <li><a href="#delivery">Delivery</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#terms">Terms</a></li>
+                    </ul>
+                </div>
+                <div class="sign-in">
+                    <h4>Stay in touch</h4>
+                    <p>Sign up for offers & updates.</p>
+                    <form class="newsletter-form" action="#"> <label class="visually-hidden" for="email">Email address</label> 
+                        <input id="email" name="email" type="email" placeholder="you@example.com" required> 
+                        <button type="submit">Subscribe</button> 
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Cheesiee Delight. All rights reserved.</p>
+        </div>
+    </footer>
+    <script defer src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheesiee Delight!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar flex between">
+            <a href="index.html" class="logo"><img src="images/Cheesiee Delight! logo.png"></a>
+            <!-- Desktop Menu -->
+            <ul class="navlist flex gap-3">
+                <li><a href="index.html" class="active">HOME</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="reviews.html">REVIEWS</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+            <div class="desktop-action flex gap-2">
+                <a href="#" class="cart-icon">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-value">0</span>
+                </a>
+                <a href="#" class="btn">
+                    <i class="fa-regular fa-user"></i> Sign In
+                </a>
+                <a href="#" class="lines">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+            </div>
+            <!-- Mobile Menu -->
+            <ul class="mobile-menu">
+                <li><a href="index.html" class="active">HOME</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="reviews.html">REVIEWS</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+                <li><a href="#" class="btn">
+                        <i class="fa-regular fa-user"></i> Sign In
+                    </a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Sections -->
+    <main>
+        <section class="hero-section">
+            <div class="content">
+                <h1 class="hero-title">Enjoy Every <span>Bite!</span></h1>
+                <h1 class="hero-title"><span>That You </span>Delight!</h1>
+                <p class="typing-text"><span>Fresh</span> flavors, <span>Quick</span> service, and
+                    <span>Unbeatable</span> taste made just <span>For you.</span></p>
+                <a href="menu.html" class="btn-1">Order Now!</a>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-brand"> <img src="images/Cheesiee Delight! logo.png"
+                    alt="Cheesiee Delight logo" class="footer-logo">
+                <p>Delicious Fast Food — Handcrafted Daily.</p>
+            </div>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <div class="footer-column">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#burgers">Burgers</a></li>
+                        <li><a href="#fries">Fries</a></li>
+                        <li><a href="#deals">Deals</a></li>
+                        <li><a href="#combo">Combos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#details">Details</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#faqs">FAQs</a></li>
+                        <li><a href="#delivery">Delivery</a></li>
+                        <li><a href="#returns">Returns</a></li>
+                        <li><a href="#terms">Terms</a></li>
+                    </ul>
+                </div>
+                <div class="sign-in">
+                    <h4>Stay in touch</h4>
+                    <p>Sign up for offers & updates.</p>
+                    <form class="newsletter-form" action="#"> <label class="visually-hidden" for="email">Email
+                            address</label> <input id="email" name="email" type="email" placeholder="you@example.com"
+                            required> <button type="submit">Subscribe</button> </form>
+                </div>
+            </nav>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> Cheesiee Delight. All rights reserved.</p>
+        </div>
+    </footer>
+    <script defer src="script.js"></script>
+</body>
+</html>
