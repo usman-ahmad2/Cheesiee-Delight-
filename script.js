@@ -7,46 +7,56 @@ const cartValue = document.querySelector('.cart-value');
 const addButtons = document.querySelectorAll('.add-btn');
 const lines = document.querySelector('.lines');
 const mobileMenu = document.querySelector('.mobile-menu');
-
 let cart = [];
-cartIcon.addEventListener('click', () => cartTab.classList.toggle('active'));
-closeBtn.addEventListener('click', () => cartTab.classList.remove('active'));
-lines.addEventListener('click', ()=>mobileMenu.classList.toggle('mobile-menu-active'));
-// ADD ITEMS TO CART
-addButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        const card = e.target.closest('.menu-card');
-        const item = {
-            id: card.dataset.id,
-            name: card.dataset.name,
-            price: Number(card.dataset.price),
-            img: card.dataset.img
-        };
-        addToCart(item);
+if (lines && mobileMenu) {
+    lines.addEventListener('click', () => {
+        mobileMenu.classList.toggle('mobile-menu-active');
     });
-});
+}
+if (cartIcon && cartTab) {
+    cartIcon.addEventListener('click', () => {
+        cartTab.classList.toggle('active');
+    });
+}
 
+if (closeBtn && cartTab) {
+    closeBtn.addEventListener('click', () => {
+        cartTab.classList.remove('active');
+    });
+}
+if (addButtons.length > 0) {
+    addButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const card = e.target.closest('.menu-card');
+            const item = {
+                id: card.dataset.id,
+                name: card.dataset.name,
+                price: Number(card.dataset.price),
+                img: card.dataset.img
+            };
+            addToCart(item);
+        });
+    });
+}
 function addToCart(item) {
-    // prevent duplicates
     if (!cart.find(i => i.id === item.id)) {
         cart.push(item);
     }
     updateCart();
 }
-
-// REMOVE ITEM
 function removeItem(id) {
     cart = cart.filter(item => item.id !== id);
     updateCart();
 }
-
-// UPDATE CART UI
 function updateCart() {
+    if (!cartList || !cartValue || !cartTotal) return;
+
     cartList.innerHTML = "";
     let total = 0;
 
     cart.forEach(item => {
         total += item.price;
+
         const div = document.createElement('div');
         div.classList.add('cart-item');
         div.innerHTML = `
@@ -59,45 +69,38 @@ function updateCart() {
         `;
         cartList.appendChild(div);
     });
-
     cartTotal.textContent = `Rs. ${total}`;
     cartValue.textContent = cart.length;
 }
-// CHECKOUT FUNCTION
-// CHECKOUT FUNCTION
-document.querySelector(".check-btn").addEventListener("click", () => {
-    if (cart.length === 0) {
-        alert("Your cart is empty!");
-        return;
-    }
+const checkoutBtn = document.querySelector(".check-btn");
+if (checkoutBtn) {
+    checkoutBtn.addEventListener("click", () => {
+        if (cart.length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
 
-    alert("Order Confirmed!");
+        alert("Order Confirmed!");
 
-    // Clear cart array
-    cart = [];
+        cart = [];
+        localStorage.removeItem("cart");
 
-    // Also clear localStorage (if you use it)
-    localStorage.removeItem("cart");
-
-    // Clear cart HTML
-    document.querySelector(".cart-list").innerHTML = "";
-
-    // Reset total
-    document.querySelector(".cart-total").textContent = "Rs. 0";
-
-    // Reset cart number badge
-    updateCartNumber();
-
-    // Close cart tab
-    document.querySelector(".cart-tab").classList.remove("active");
-});
+        if (cartList) cartList.innerHTML = "";
+        if (cartTotal) cartTotal.textContent = "Rs. 0";
+        if (cartValue) cartValue.textContent = "0";
+        if (cartTab) cartTab.classList.remove("active");
+    });
+}
 function validateMessage() {
-    const message = document.getElementById("message").value.trim();
+    const message = document.getElementById("message");
+    if (!message) return true;
 
-    if (message.length < 20) {
+    const text = message.value.trim();
+
+    if (text.length < 20) {
         alert("Message must be at least 20 characters long.");
-        return false; // Stop form submission
+        return false;
     }
 
-    return true; // Allow submission
+    return true;
 }
