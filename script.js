@@ -101,6 +101,49 @@ function validateMessage() {
         alert("Message must be at least 20 characters long.");
         return false;
     }
-
     return true;
+}
+const openSignupBtns = document.querySelectorAll(".open-signup");
+const signupOverlay = document.getElementById("signupOverlay");
+const signupModal = document.getElementById("signupModal");
+const closeSignup = document.getElementById("closeSignup");
+const signupForm = document.getElementById("signupForm");
+openSignupBtns.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        signupOverlay.classList.add("active");
+        signupModal.classList.add("active");
+    });
+});
+if (closeSignup) {
+    closeSignup.addEventListener("click", () => {
+        signupOverlay.classList.remove("active");
+        signupModal.classList.remove("active");
+    });
+}
+if (signupOverlay) {
+    signupOverlay.addEventListener("click", () => {
+        signupOverlay.classList.remove("active");
+        signupModal.classList.remove("active");
+    });
+}
+if (signupForm) {
+    signupForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("signupName").value.trim();
+        const email = document.getElementById("signupEmail").value.trim();
+        const pass = document.getElementById("signupPass").value.trim();
+        if (name.length < 3) {
+            alert("Name must be at least 3 characters.");
+            return;
+        }
+        if (pass.length < 6) {
+            alert("Password must be at least 6 characters.");
+            return;
+        }
+        console.log("Signed In Successfully!");
+        signupOverlay.classList.remove("active");
+        signupModal.classList.remove("active");
+        signupForm.reset();
+    });
 }
